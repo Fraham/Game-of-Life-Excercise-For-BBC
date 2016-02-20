@@ -73,8 +73,8 @@ public class LifeTest {
     @Test
     public void testDecodeInputLifeString()
     {
-    	assertEquals(setOfCells ,Life.decodeInputLifeString("*.newLine.*"));
+    	assertEquals(setOfCells, Life.decodeInputLifeString("*.\n.*"));
     	
-    	assertNotSame(setOfCells ,Life.decodeInputLifeString(".*newLine*."));
+    	assertNotSame(setOfCells, Life.decodeInputLifeString(".*\n*."));
     }
 }

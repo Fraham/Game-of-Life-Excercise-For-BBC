@@ -1,6 +1,7 @@
 package bbc.gameoflifestub;
 
 import java.util.Set;
+import java.util.HashSet;
 
 public class Life {
 
@@ -29,7 +30,30 @@ public class Life {
         return numNeighbours == 3 ? true : false;
     }
 
-	public static Set<Cell> decodeInputLifeString(String string) {
-		throw new UnsupportedOperationException();
+	public static Set<Cell> decodeInputLifeString(String inputString) {
+		int currentX = 0;
+		int currentY = 1;
+		
+		Set<Cell> newCells = new HashSet<Cell>();
+		
+		for (int i = 0; i < inputString.length(); i++){
+		    char character = inputString.charAt(i);
+		    
+		    currentX++;
+		    
+		    if (character == '.'){
+		    	//dead cell, do nothing
+		    }
+		    else if (character == '*'){
+		    	newCells.add(new Cell(currentX, currentY));
+		    }
+		    else if (character == '\n'){
+		    	currentY++;
+		    	currentX = 0;
+		    }
+		}
+				
+		
+		return newCells;
 	}
 }
