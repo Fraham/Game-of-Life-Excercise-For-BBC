@@ -22,4 +22,10 @@ public class Life {
     	// the cell an only survive if there is either 2 or 3 neighours
         return numNeighbours == 2 || numNeighbours == 3 ? true : false;
     }
+    
+    public boolean cellShouldCreated(int numNeighbours)
+    {
+    	// the cell an only be created if there is 3 neighours
+        return numNeighbours == 3 ? true : false;
+    }
 }
