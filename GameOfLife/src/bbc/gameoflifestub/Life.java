@@ -28,4 +28,8 @@ public class Life {
     	// the cell an only be created if there is 3 neighours
         return numNeighbours == 3 ? true : false;
     }
+
+	public static Set<Cell> decodeInputLifeString(String string) {
+		throw new UnsupportedOperationException();
+	}
 }

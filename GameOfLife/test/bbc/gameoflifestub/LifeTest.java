@@ -69,4 +69,12 @@ public class LifeTest {
     	assertFalse(life.cellShouldCreated(7));
     	assertFalse(life.cellShouldCreated(8));
     }
+    
+    @Test
+    public void testDecodeInputLifeString()
+    {
+    	assertEquals(setOfCells ,Life.decodeInputLifeString("*.newLine.*"));
+    	
+    	assertNotSame(setOfCells ,Life.decodeInputLifeString(".*newLine*."));
+    }
 }

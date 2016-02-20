@@ -16,3 +16,9 @@ hs_err_pid*
 .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
 .metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml
 *.snap
+.metadata/.plugins/org.eclipse.core.resources/.projects/GameOfLife/.markers.snap
+.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+*.snap
+.metadata/.plugins/org.eclipse.jdt.core/3438990737.index
+.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml
+.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
