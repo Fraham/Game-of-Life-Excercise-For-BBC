@@ -64,9 +64,9 @@ public class LifeTest {
     	assertFalse(life.cellShouldCreated(1));
     	assertFalse(life.cellShouldCreated(2));
     	assertFalse(life.cellShouldCreated(4));
-    	assertFalse(life.cellShouldCreated(5));
-    	assertFalse(life.cellShouldCreated(6));
-    	assertFalse(life.cellShouldCreated(7));
-    	assertFalse(life.cellShouldCreated(8));
+        assertFalse(life.cellShouldCreated(5));
+        assertFalse(life.cellShouldCreated(6));
+        assertFalse(life.cellShouldCreated(7));
+        assertFalse(life.cellShouldCreated(8));
     }
 }
