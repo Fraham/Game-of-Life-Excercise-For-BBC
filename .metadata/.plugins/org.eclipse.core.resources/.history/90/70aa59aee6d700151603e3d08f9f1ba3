@@ -43,17 +43,4 @@ public class LifeTest {
         assertFalse(life.cellShouldSurvive(7));
         assertFalse(life.cellShouldSurvive(8));
     }
-    
-    @Test
-    public void testSurvival()
-    {
-    	assertTrue(life.cellShouldSurvive(2));
-    	assertTrue(life.cellShouldSurvive(3));
-    }
-    
-    @Test
-    public void testCreation()
-    {
-    	assertTrue(life.cellShouldSurvive(3));
-    }
 }

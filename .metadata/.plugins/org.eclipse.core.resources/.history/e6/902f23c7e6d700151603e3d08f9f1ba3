@@ -47,13 +47,6 @@ public class LifeTest {
     @Test
     public void testSurvival()
     {
-    	assertTrue(life.cellShouldSurvive(2));
-    	assertTrue(life.cellShouldSurvive(3));
-    }
-    
-    @Test
-    public void testCreation()
-    {
-    	assertTrue(life.cellShouldSurvive(3));
+    	
     }
 }
