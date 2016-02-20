@@ -29,6 +29,8 @@ public class CellTest {
     public void testHash()
     {
         assertEquals(new Cell(1, 1).hashCode(), new Cell(1, 1).hashCode());
+        
+        assertNotSame(new Cell(2, 1).hashCode(), new Cell(1, 1).hashCode());
 
         HashSet<Cell> set = new HashSet<Cell>();
         set.add(new Cell(1, 1));
