@@ -20,13 +20,13 @@ public class Life {
 
     public boolean cellShouldSurvive(int numNeighbours)
     {
-    	// the cell an only survive if there is either 2 or 3 neighours
+    	// the cell an only survive if there is either 2 or 3 neighbours
         return numNeighbours == 2 || numNeighbours == 3 ? true : false;
     }
     
     public boolean cellShouldCreated(int numNeighbours)
     {
-    	// the cell an only be created if there is 3 neighours
+    	// the cell an only be created if there is 3 neighbours
         return numNeighbours == 3 ? true : false;
     }
 
