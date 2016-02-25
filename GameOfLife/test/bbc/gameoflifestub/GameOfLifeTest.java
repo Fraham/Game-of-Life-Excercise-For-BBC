@@ -71,6 +71,12 @@ public class GameOfLifeTest {
 		assertEquals(100, testGameOfLife.getWidth());
 		testGameOfLife.setWidth(500);
 		assertEquals(500, testGameOfLife.getWidth());
+		
+		try {
+			testGameOfLife.setWidth(-100);
+		    fail( "Should throw IllegalArgumentException for non-postive number." );
+		} catch (IllegalArgumentException expectedException) {
+		}
 	}
 
 	@Test
@@ -84,5 +90,10 @@ public class GameOfLifeTest {
 		testGameOfLife.setHeight(1000);
 		assertEquals(1000, testGameOfLife.getHeight());
 		
+		try {
+			testGameOfLife.setHeight(-100);
+		    fail( "Should throw IllegalArgumentException for non-postive number." );
+		} catch (IllegalArgumentException expectedException) {
+		}		
 	}
 }
