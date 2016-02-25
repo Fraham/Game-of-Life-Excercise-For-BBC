@@ -77,4 +77,10 @@ public class LifeTest {
     	
     	assertNotSame(setOfCells, Life.decodeInputLifeString(".*\n*.", new GameOfLife()));
     }
+    
+    @Test
+    public void testGetPrintOut()
+    {
+    	assertEquals("*.\n.*", life.getPrintOut());
+    }
 }
