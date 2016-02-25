@@ -17,7 +17,7 @@ public class GameOfLife {
 	}
 	
 	public void printCurrentLife(){
-		System.out.println(currentLife.getPrintOut());
+		System.out.println(currentLife.getPrintOut(getWidth(), getHeight()));
 	}
 
 	public Life getCurrentLife() {

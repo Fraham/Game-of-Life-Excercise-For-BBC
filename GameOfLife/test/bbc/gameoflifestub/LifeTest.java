@@ -81,6 +81,6 @@ public class LifeTest {
     @Test
     public void testGetPrintOut()
     {
-    	assertEquals("*.\n.*", life.getPrintOut());
+    	assertEquals("*.\n.*", life.getPrintOut(2, 2));
     }
 }

@@ -59,7 +59,23 @@ public class Life {
 		return newCells;
 	}
 	
-	public String getPrintOut(){
-		return null;
+	public String getPrintOut(int width, int height){
+		StringBuilder newString = new StringBuilder("");
+		for(int i = 1; i <= height; i++){
+			for(int j = 1; j <= width; j++){
+				if (liveCells.contains(new Cell(j, i))){
+					newString.append('*');
+				}
+				else{
+					newString.append('.');
+				}
+			}
+			if (height != i)
+			{
+				newString.append('\n');
+			}
+		}
+		
+		return newString.toString();
 	}
 }
