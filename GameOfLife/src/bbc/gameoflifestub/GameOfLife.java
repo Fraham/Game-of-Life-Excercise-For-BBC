@@ -41,6 +41,9 @@ public class GameOfLife {
 	}
 
 	public void setWidth(int width) {
+		if (width < 1){
+			throw new IllegalArgumentException("Number has to be non-negative");
+		}
 		this.width = width;
 	}
 
@@ -49,6 +52,9 @@ public class GameOfLife {
 	}
 
 	public void setHeight(int height) {
+		if (height < 1){
+			throw new IllegalArgumentException("Number has to be non-negative");
+		}
 		this.height = height;
 	}
 
