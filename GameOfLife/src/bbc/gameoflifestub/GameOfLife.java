@@ -19,6 +19,10 @@ public class GameOfLife {
 	public void printCurrentLife(){
 		System.out.println(currentLife.getPrintOut(getWidth(), getHeight()));
 	}
+	
+	public void setInitailLife(String initailLife){
+		currentLife = Life.decodeInputLifeString(initailLife, this);
+	}
 
 	public Life getCurrentLife() {
 		return currentLife;
@@ -58,8 +62,9 @@ public class GameOfLife {
 		this.height = height;
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		GameOfLife gameOfLife = new GameOfLife();
+		gameOfLife.setInitailLife("*.\n.*");
 		gameOfLife.startGame();
 	}
 }

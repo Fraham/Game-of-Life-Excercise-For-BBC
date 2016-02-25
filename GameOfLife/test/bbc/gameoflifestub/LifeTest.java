@@ -73,9 +73,9 @@ public class LifeTest {
     @Test
     public void testDecodeInputLifeString()
     {
-    	assertEquals(setOfCells, Life.decodeInputLifeString("*.\n.*", new GameOfLife()));
+    	assertEquals(life, Life.decodeInputLifeString("*.\n.*", new GameOfLife()));
     	
-    	assertNotSame(setOfCells, Life.decodeInputLifeString(".*\n*.", new GameOfLife()));
+    	assertNotSame(life, Life.decodeInputLifeString(".*\n*.", new GameOfLife()));
     }
     
     @Test
