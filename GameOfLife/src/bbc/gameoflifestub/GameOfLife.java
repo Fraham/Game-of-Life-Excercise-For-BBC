@@ -16,8 +16,8 @@ public class GameOfLife {
 		
 	}
 	
-	public static void main(String[] args){
-		
+	public void printCurrentLife(){
+		System.out.println(currentLife.getPrintOut());
 	}
 
 	public Life getCurrentLife() {
@@ -58,4 +58,8 @@ public class GameOfLife {
 		this.height = height;
 	}
 
+	public static void main(String[] args){
+		GameOfLife gameOfLife = new GameOfLife();
+		gameOfLife.startGame();
+	}
 }

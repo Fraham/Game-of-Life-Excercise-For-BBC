@@ -74,7 +74,7 @@ public class GameOfLifeTest {
 		
 		try {
 			testGameOfLife.setWidth(-100);
-		    fail( "Should throw IllegalArgumentException for non-postive number." );
+		    fail("Should throw IllegalArgumentException for non-postive number.");
 		} catch (IllegalArgumentException expectedException) {
 		}
 	}
@@ -92,7 +92,7 @@ public class GameOfLifeTest {
 		
 		try {
 			testGameOfLife.setHeight(-100);
-		    fail( "Should throw IllegalArgumentException for non-postive number." );
+		    fail("Should throw IllegalArgumentException for non-postive number.");
 		} catch (IllegalArgumentException expectedException) {
 		}		
 	}

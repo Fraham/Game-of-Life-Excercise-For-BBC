@@ -30,7 +30,7 @@ public class Life {
         return numNeighbours == 3 ? true : false;
     }
 
-	public static Set<Cell> decodeInputLifeString(String inputString) {
+	public static Set<Cell> decodeInputLifeString(String inputString, GameOfLife gameOfLife) {
 		int currentX = 0;
 		int currentY = 1;
 		
@@ -53,7 +53,13 @@ public class Life {
 		    }
 		}
 				
+		gameOfLife.setHeight(currentX);
+		gameOfLife.setWidth(currentY);
 		
 		return newCells;
+	}
+	
+	public String getPrintOut(){
+		return null;
 	}
 }
