@@ -76,6 +76,12 @@ public class LifeTest {
     	assertEquals(life, Life.decodeInputLifeString("*.\n.*", new GameOfLife(10)));
     	
     	assertNotSame(life, Life.decodeInputLifeString(".*\n*.", new GameOfLife(10)));
+    	
+    	try {
+    		Life.decodeInputLifeString("..........\n*.", new GameOfLife(10));
+		    fail("Should throw IllegalArgumentException wrong different width value.");
+		} catch (IllegalArgumentException expectedException) {
+		}
     }
     
     @Test

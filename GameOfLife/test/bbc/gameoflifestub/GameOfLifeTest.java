@@ -96,4 +96,87 @@ public class GameOfLifeTest {
 		} catch (IllegalArgumentException expectedException) {
 		}		
 	}
+	
+	@Test
+	public void testRunning(){
+		// start of running test 1
+		GameOfLife testRunningGame = new GameOfLife(3);
+		testRunningGame.setInitailLife(".*.\n**.\n...");
+		testRunningGame.setUpNextGeneration();
+		
+		HashSet<Cell> setOfCells = new HashSet<Cell>();
+    	setOfCells.add(new Cell(1,1));
+    	setOfCells.add(new Cell(1,2));
+    	setOfCells.add(new Cell(2,1));
+    	setOfCells.add(new Cell(2,2));
+        Life life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+        
+        testRunningGame.setUpNextGeneration();
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+		// end of running test 1
+        
+		// start of running test 2
+        testRunningGame = new GameOfLife(3);
+		testRunningGame.setInitailLife("...\n...\n...");
+		testRunningGame.setUpNextGeneration();
+		
+		setOfCells = new HashSet<Cell>();
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+        
+        testRunningGame.setUpNextGeneration();
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+		// end of running test 2
+        
+		// start of running test 3
+        testRunningGame = new GameOfLife(3);
+		testRunningGame.setInitailLife(".*.\n..*\n.*.");
+		testRunningGame.setUpNextGeneration();
+		
+		setOfCells = new HashSet<Cell>();
+		setOfCells.add(new Cell(2,2));
+		setOfCells.add(new Cell(3,2));
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+        
+        testRunningGame.setUpNextGeneration();
+        
+        setOfCells = new HashSet<Cell>();
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+		// end of running test 3
+        
+		// start of running test 4
+        testRunningGame = new GameOfLife(3);
+		testRunningGame.setInitailLife(".*.\n*.*\n.*.");
+		testRunningGame.setUpNextGeneration();
+		
+		setOfCells = new HashSet<Cell>();
+		setOfCells.add(new Cell(1,2));
+		setOfCells.add(new Cell(2,1));
+		setOfCells.add(new Cell(2,3));
+		setOfCells.add(new Cell(3,2));
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+        
+        testRunningGame.setUpNextGeneration();
+        
+        setOfCells = new HashSet<Cell>();
+		setOfCells.add(new Cell(1,2));
+		setOfCells.add(new Cell(2,1));
+		setOfCells.add(new Cell(2,3));
+		setOfCells.add(new Cell(3,2));
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+		// end of running test 4
+	}
 }
