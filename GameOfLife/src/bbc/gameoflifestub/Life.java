@@ -12,6 +12,10 @@ public class Life {
 		this.liveCells = initialLiveCells;
 	}
 	
+	public Life(){
+		liveCells = new HashSet<Cell>();
+	}
+	
     // Read-only access to the game state
     public Set<Cell> getLiveCells()
     {
@@ -28,6 +32,10 @@ public class Life {
     {
     	// the cell an only be created if there is 3 neighbours
         return numNeighbours == 3 ? true : false;
+    }
+    
+    public int getNumberOfNeighbours(Cell cell){    	
+    	return getNumberOfNeighbours(cell.getX(), cell.getY());
     }
     
     public int getNumberOfNeighbours(int x, int y){
@@ -75,8 +83,8 @@ public class Life {
 		    }
 		}
 				
-		gameOfLife.setHeight(currentX);
-		gameOfLife.setWidth(currentY);
+		gameOfLife.setHeight(currentY);
+		gameOfLife.setWidth(currentX);
 		
 		return new Life(newCells);
 	}

@@ -11,9 +11,7 @@ public class GameOfLifeTest {
 	
 	private GameOfLife testGameOfLife;
 	HashSet<Cell> currentSetOfCells;
-	HashSet<Cell> nextSetOfCells;
 	Life currentLife;
-	Life nextLife;
 	
 	@Before
 	public void setUp(){
@@ -26,39 +24,17 @@ public class GameOfLifeTest {
 		currentSetOfCells.add(new Cell(2,2));
         currentLife = new Life(currentSetOfCells);
         
-        nextSetOfCells = new HashSet<Cell>();
-        nextSetOfCells.add(new Cell(2,1));
-        nextSetOfCells.add(new Cell(1,2));
-        nextLife = new Life(nextSetOfCells);
-        
         testGameOfLife.setCurrentLife(currentLife);
-        testGameOfLife.setNextLife(nextLife);
     }
 	
 	@Test
 	public void testGetCurrentLife(){
 		assertEquals(currentLife, testGameOfLife.getCurrentLife());
-		assertNotSame(nextLife, testGameOfLife.getCurrentLife());
 	}
 
 	@Test
 	public void testSetCurrentLife() {
 		assertEquals(currentLife, testGameOfLife.getCurrentLife());
-		testGameOfLife.setCurrentLife(nextLife);
-		assertEquals(nextLife, testGameOfLife.getCurrentLife());
-	}
-
-	@Test
-	public void testGetNextLife() {
-		assertEquals(nextLife, testGameOfLife.getNextLife());
-		assertNotSame(currentLife, testGameOfLife.getNextLife());
-	}
-
-	@Test
-	public void testSetNextLife() {
-		assertEquals(nextLife, testGameOfLife.getNextLife());
-		testGameOfLife.setNextLife(currentLife);
-		assertEquals(currentLife, testGameOfLife.getNextLife());
 	}
 
 	@Test

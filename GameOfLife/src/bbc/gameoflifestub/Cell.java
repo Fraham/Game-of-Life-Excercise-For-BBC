@@ -17,4 +17,12 @@ public class Cell {
 		Cell otherCell = (Cell)other;
 		return otherCell.x == x && otherCell.y == y; 
 	}
+	
+	public int getX(){
+		return this.x;
+	}
+	
+	public int getY(){
+		return this.y;
+	}
 }
