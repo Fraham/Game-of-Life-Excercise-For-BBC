@@ -24,9 +24,11 @@ public class GameOfLife {
 	
 	public void setUpNextGeneration(){
 		Life nextLife = new Life();
+		
 		for (int i = 1; i <= getWidth(); i++){
 			for (int j = 1; j <= getHeight(); j++){
 				Cell checkCell = new Cell(i, j);
+				
 				if(currentLife.isCellAlive(checkCell)){
 					if(currentLife.cellShouldSurvive(currentLife.getNumberOfNeighbours(checkCell))){
 						nextLife.getLiveCells().add(checkCell);
@@ -99,8 +101,8 @@ public class GameOfLife {
 
 	public static void main(String[] args) {
 		GameOfLife gameOfLife = new GameOfLife(10);
-		//gameOfLife.setInitailLife(".*...\n..*..\n***..\n.....\n.....\n.....\n.....\n.....\n.....\n.....\n.....");
-		gameOfLife.setInitailLife("*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****");
+		gameOfLife.setInitailLife(".*...\n..*..\n***..\n.....\n.....\n.....");
+		//gameOfLife.setInitailLife("*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****");
 		gameOfLife.startGame();
 	}
 }

@@ -93,12 +93,7 @@ public class Life {
 		StringBuilder newString = new StringBuilder("");
 		for(int i = 1; i <= height; i++){
 			for(int j = 1; j <= width; j++){
-				if (liveCells.contains(new Cell(j, i))){
-					newString.append('*');
-				}
-				else{
-					newString.append('.');
-				}
+				newString.append(new Cell(j, i).getCharacter(this));
 			}
 			if (height != i)
 			{
