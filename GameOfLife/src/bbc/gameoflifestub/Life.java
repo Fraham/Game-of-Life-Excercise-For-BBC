@@ -64,6 +64,8 @@ public class Life {
 		int currentX = 0;
 		int currentY = 1;
 		
+		int firstWidth = -1;
+		
 		Set<Cell> newCells = new HashSet<Cell>();
 		
 		for (int i = 0; i < inputString.length(); i++){
@@ -79,12 +81,25 @@ public class Life {
 		    }
 		    else if (character == '\n'){
 		    	currentY++;
+		    	
+		    	if (firstWidth == -1){
+		    		firstWidth = currentX;
+		    	}
+		    	
+		    	if(currentX != firstWidth){
+		    		throw new IllegalArgumentException("Width differs from previous.");
+		    	}
+		    	
 		    	currentX = 0;
 		    }
 		}
+		
+		if(currentX != firstWidth - 1){
+    		throw new IllegalArgumentException("Width differs from previous.");
+    	}
 				
 		gameOfLife.setHeight(currentY);
-		gameOfLife.setWidth(currentX);
+		gameOfLife.setWidth(firstWidth - 1);
 		
 		return new Life(newCells);
 	}
