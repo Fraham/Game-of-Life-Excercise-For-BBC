@@ -63,47 +63,10 @@ public class LifeTest {
     	assertFalse(life.cellShouldCreated(0));
     	assertFalse(life.cellShouldCreated(1));
     	assertFalse(life.cellShouldCreated(2));
-    	assertFalse(life.cellShouldCreated(4));
-    	assertFalse(life.cellShouldCreated(5));
-    	assertFalse(life.cellShouldCreated(6));
-    	assertFalse(life.cellShouldCreated(7));
-    	assertFalse(life.cellShouldCreated(8));
-    }
-    
-    @Test
-    public void testDecodeInputLifeString()
-    {
-    	assertEquals(life, Life.decodeInputLifeString("*.\n.*", new GameOfLife(10)));
-    	
-    	assertNotSame(life, Life.decodeInputLifeString(".*\n*.", new GameOfLife(10)));
-    }
-    
-    @Test
-    public void testGetPrintOut()
-    {
-    	assertEquals("*.\n.*", life.getPrintOut(2, 2));
-    }
-    
-    @Test
-    public void testGetNumberOfNeighbours()
-    {
-    	assertEquals(2, life.getNumberOfNeighbours(1, 2));
-    	assertEquals(2, life.getNumberOfNeighbours(2, 1));
-    	assertEquals(1, life.getNumberOfNeighbours(1, 1));
-    	assertEquals(1, life.getNumberOfNeighbours(2, 2));
-    }
-    
-    @Test
-    public void testIsCellAlive()
-    {
-    	assertTrue(life.isCellAlive(new Cell(1,1)));
-    	assertTrue(life.isCellAlive(new Cell(2,2)));
-    	assertFalse(life.isCellAlive(new Cell(1,2)));
-    	assertFalse(life.isCellAlive(new Cell(2,1)));
-    	
-    	assertTrue(life.isCellAlive(1,1));
-    	assertTrue(life.isCellAlive(2,2));
-    	assertFalse(life.isCellAlive(1,2));
-    	assertFalse(life.isCellAlive(2,1));
+        assertFalse(life.cellShouldCreated(4));
+        assertFalse(life.cellShouldCreated(5));
+        assertFalse(life.cellShouldCreated(6));
+        assertFalse(life.cellShouldCreated(7));
+        assertFalse(life.cellShouldCreated(8));
     }
 }
