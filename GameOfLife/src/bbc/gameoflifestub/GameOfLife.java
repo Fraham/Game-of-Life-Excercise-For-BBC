@@ -15,7 +15,14 @@ public class GameOfLife {
 	}
 	
 	public void startGame(){
-		printCurrentLife();
+		for (int i = 0; i < getMaxGenerations(); i++){
+			printCurrentLife();
+			setUpNextGeneration();
+		}
+	}
+	
+	public void setUpNextGeneration(){
+		
 	}
 	
 	public void printCurrentLife(){
@@ -64,17 +71,6 @@ public class GameOfLife {
 		this.height = height;
 	}
 	
-	public boolean equals(Object other){
-		GameOfLife otherGameOfLife = (GameOfLife)other;
-		return otherGameOfLife.getHeight() == getHeight() && otherGameOfLife.getWidth() == getWidth() && otherGameOfLife.getCurrentLife() == getCurrentLife(); 
-	}
-
-	public static void main(String[] args) {
-		GameOfLife gameOfLife = new GameOfLife(10);
-		gameOfLife.setInitailLife("*.\n.*");
-		gameOfLife.startGame();
-	}
-
 	public int getMaxGenerations() {
 		return maxGenerations;
 	}
@@ -84,5 +80,16 @@ public class GameOfLife {
 			throw new IllegalArgumentException("Number has to be non-negative");
 		}
 		this.maxGenerations = maxGenerations;
+	}
+	
+	public boolean equals(Object other){
+		GameOfLife otherGameOfLife = (GameOfLife)other;
+		return otherGameOfLife.getHeight() == getHeight() && otherGameOfLife.getWidth() == getWidth() && otherGameOfLife.getCurrentLife() == getCurrentLife(); 
+	}
+
+	public static void main(String[] args) {
+		GameOfLife gameOfLife = new GameOfLife(10);
+		gameOfLife.setInitailLife("*.\n.*");
+		gameOfLife.startGame();
 	}
 }
