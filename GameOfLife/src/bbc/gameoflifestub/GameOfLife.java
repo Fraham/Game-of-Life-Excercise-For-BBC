@@ -45,7 +45,7 @@ public class GameOfLife {
 		System.out.println(currentLife.getPrintOut(getWidth(), getHeight()));
 	}
 	
-	public void setInitailLife(String initailLife){
+	public void setInitailLife(String initailLife) throws IllegalArgumentException{
 		setCurrentLife(Life.decodeInputLifeString(initailLife, this));
 	}
 
@@ -96,9 +96,14 @@ public class GameOfLife {
 	}
 
 	public static void main(String[] args) {
-		GameOfLife gameOfLife = new GameOfLife(10);
-		gameOfLife.setInitailLife(".*...\n..*..\n***..\n.....\n.....\n.....");
-		//gameOfLife.setInitailLife("*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****");
-		gameOfLife.startGame();
+		try{
+			GameOfLife gameOfLife = new GameOfLife(10);
+			gameOfLife.setInitailLife(".*...\n..*..\n***..\n.....\n.....\n.....");
+			//gameOfLife.setInitailLife("*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****\n*****");
+			gameOfLife.startGame();
+		}catch(Exception ex)
+		{
+			System.out.println("Error - " + ex.getMessage());
+		}
 	}
 }

@@ -79,7 +79,25 @@ public class LifeTest {
     	
     	try {
     		Life.decodeInputLifeString("..........\n*.", new GameOfLife(10));
-		    fail("Should throw IllegalArgumentException wrong different width value.");
+		    fail("Should throw IllegalArgumentException for wrong different width value.");
+		} catch (IllegalArgumentException expectedException) {
+		}
+    	
+    	try {
+    		Life.decodeInputLifeString("", new GameOfLife(10));
+		    fail("Should throw IllegalArgumentException for length zero string");
+		} catch (IllegalArgumentException expectedException) {
+		}
+    	
+    	try {
+    		Life.decodeInputLifeString(null, new GameOfLife(10));
+		    fail("Should throw IllegalArgumentException for null string");
+		} catch (IllegalArgumentException expectedException) {
+		}
+    	
+    	try {
+    		Life.decodeInputLifeString("*c\n.*", new GameOfLife(10));
+		    fail("Should throw IllegalArgumentException for unknown character");
 		} catch (IllegalArgumentException expectedException) {
 		}
     }
