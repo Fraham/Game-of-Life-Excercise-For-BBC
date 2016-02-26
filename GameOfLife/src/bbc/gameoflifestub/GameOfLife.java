@@ -29,15 +29,11 @@ public class GameOfLife {
 			for (int j = 1; j <= getHeight(); j++){
 				Cell checkCell = new Cell(i, j);
 				
-				if(currentLife.isCellAlive(checkCell)){
-					if(currentLife.cellShouldSurvive(currentLife.getNumberOfNeighbours(checkCell))){
-						nextLife.getLiveCells().add(checkCell);
-					}
+				if(currentLife.isCellAlive(checkCell) && currentLife.cellShouldSurvive(currentLife.getNumberOfNeighbours(checkCell))){
+					nextLife.getLiveCells().add(checkCell);
 				}
-				else{
-					if(currentLife.cellShouldCreated(currentLife.getNumberOfNeighbours(checkCell))){
-						nextLife.getLiveCells().add(checkCell);
-					}
+				else if (!currentLife.isCellAlive(checkCell) && currentLife.cellShouldCreated(currentLife.getNumberOfNeighbours(checkCell))){
+					nextLife.getLiveCells().add(checkCell);
 				}
 			}
 		}
