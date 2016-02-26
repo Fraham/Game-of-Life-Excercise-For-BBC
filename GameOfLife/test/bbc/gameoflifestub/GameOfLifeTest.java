@@ -17,7 +17,7 @@ public class GameOfLifeTest {
 	
 	@Before
 	public void setUp(){
-		testGameOfLife = new GameOfLife();
+		testGameOfLife = new GameOfLife(10);
 		testGameOfLife.setHeight(200);
 		testGameOfLife.setWidth(100);
 		
@@ -92,6 +92,30 @@ public class GameOfLifeTest {
 		
 		try {
 			testGameOfLife.setHeight(-100);
+		    fail("Should throw IllegalArgumentException for non-postive number.");
+		} catch (IllegalArgumentException expectedException) {
+		}		
+	}
+	
+	@Test
+	public void testSetInitailLife() {
+		testGameOfLife.setInitailLife("*.\n.*");
+		assertEquals(currentLife, testGameOfLife.getCurrentLife());
+	}
+	
+	@Test
+	public void testGetMaxGenerations() {
+		assertEquals(10, testGameOfLife.getMaxGenerations());
+	}
+
+	@Test
+	public void testSetMaxGenerations() {
+		assertEquals(10, testGameOfLife.getMaxGenerations());
+		testGameOfLife.setMaxGenerations(100);
+		assertEquals(100, testGameOfLife.getMaxGenerations());
+		
+		try {
+			testGameOfLife.setMaxGenerations(-100);
 		    fail("Should throw IllegalArgumentException for non-postive number.");
 		} catch (IllegalArgumentException expectedException) {
 		}		
