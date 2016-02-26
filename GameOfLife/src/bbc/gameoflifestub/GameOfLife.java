@@ -10,12 +10,14 @@ public class GameOfLife {
 	
 	private int maxGenerations;
 	
+	private int currentGeneration;
+	
 	public GameOfLife(int maxGenerations){
 		setMaxGenerations(maxGenerations);
 	}
 	
 	public void startGame(){
-		for (int i = 0; i < getMaxGenerations(); i++){
+		for (currentGeneration = 0; currentGeneration < getMaxGenerations(); currentGeneration++){
 			printCurrentLife();
 			setUpNextGeneration();
 		}
@@ -26,6 +28,7 @@ public class GameOfLife {
 	}
 	
 	public void printCurrentLife(){
+		System.out.println("Generation: " + currentGeneration);
 		System.out.println(currentLife.getPrintOut(getWidth(), getHeight()));
 	}
 	

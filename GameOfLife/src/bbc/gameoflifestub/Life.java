@@ -31,7 +31,25 @@ public class Life {
     }
     
     public int getNumberOfNeighbours(int x, int y){
-    	return 0;
+    	int count = 0;
+    	
+    	for(int i = -1; i < 2; i++){
+    		for(int j = -1; j < 2; j++){
+        		if (liveCells.contains(new Cell(x + i, y + j)) && !(i == 0 && j == 0)){
+        			count++;
+        		}
+        	}
+    	}
+    	
+    	return count;
+    }
+    
+    public boolean isCellAlive(int x, int y){
+    	return false;
+    }
+    
+    public boolean isCellAlive(Cell cell){
+    	return false;
     }
 
 	public static Life decodeInputLifeString(String inputString, GameOfLife gameOfLife) {

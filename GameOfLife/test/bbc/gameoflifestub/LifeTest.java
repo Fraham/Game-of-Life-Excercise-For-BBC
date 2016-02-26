@@ -89,7 +89,21 @@ public class LifeTest {
     {
     	assertEquals(2, life.getNumberOfNeighbours(1, 2));
     	assertEquals(2, life.getNumberOfNeighbours(2, 1));
-    	assertEquals(0, life.getNumberOfNeighbours(1, 1));
-    	assertEquals(0, life.getNumberOfNeighbours(2, 2));
+    	assertEquals(1, life.getNumberOfNeighbours(1, 1));
+    	assertEquals(1, life.getNumberOfNeighbours(2, 2));
+    }
+    
+    @Test
+    public void testIsCellAlive()
+    {
+    	assertTrue(life.isCellAlive(new Cell(1,1)));
+    	assertTrue(life.isCellAlive(new Cell(2,2)));
+    	assertFalse(life.isCellAlive(new Cell(1,2)));
+    	assertFalse(life.isCellAlive(new Cell(2,1)));
+    	
+    	assertTrue(life.isCellAlive(1,1));
+    	assertTrue(life.isCellAlive(2,2));
+    	assertFalse(life.isCellAlive(1,2));
+    	assertFalse(life.isCellAlive(2,1));
     }
 }
