@@ -60,48 +60,56 @@ public class Life {
     	return liveCells.contains(cell);
     }
 
-	public static Life decodeInputLifeString(String inputString, GameOfLife gameOfLife) {
-		int currentX = 0;
-		int currentY = 1;
-		
-		int firstWidth = -1;
-		
-		Set<Cell> newCells = new HashSet<Cell>();
-		
-		for (int i = 0; i < inputString.length(); i++){
-		    char character = inputString.charAt(i);
-		    
-		    currentX++;
-		    
-		    if (character == '.'){
-		    	//dead cell, do nothing
-		    }
-		    else if (character == '*'){
-		    	newCells.add(new Cell(currentX, currentY));
-		    }
-		    else if (character == '\n'){
-		    	currentY++;
-		    	
-		    	if (firstWidth == -1){
-		    		firstWidth = currentX;
-		    	}
-		    	
-		    	if(currentX != firstWidth){
-		    		throw new IllegalArgumentException("Width differs from previous.");
-		    	}
-		    	
-		    	currentX = 0;
-		    }
+	public static Life decodeInputLifeString(String inputString, GameOfLife gameOfLife) throws IllegalArgumentException {
+		if (inputString != null && inputString.length() > 0){
+			int currentX = 0;
+			int currentY = 1;
+			
+			int firstWidth = -1;
+			
+			Set<Cell> newCells = new HashSet<Cell>();
+			
+			for (int i = 0; i < inputString.length(); i++){
+			    char character = inputString.charAt(i);
+			    
+			    currentX++;
+			    
+			    if (character == '.'){
+			    	//dead cell, do nothing
+			    }
+			    else if (character == '*'){
+			    	newCells.add(new Cell(currentX, currentY));
+			    }
+			    else if (character == '\n'){
+			    	currentY++;
+			    	
+			    	if (firstWidth == -1){
+			    		firstWidth = currentX;
+			    	}
+			    	
+			    	if(currentX != firstWidth){
+			    		throw new IllegalArgumentException("Width differs from previous.");
+			    	}
+			    	
+			    	currentX = 0;
+			    }
+			    else{
+			    	throw new IllegalArgumentException("Unknown character.");
+			    }
+			}
+			
+			if(currentX != firstWidth - 1){
+	    		throw new IllegalArgumentException("Width differs from previous.");
+	    	}
+					
+			gameOfLife.setHeight(currentY);
+			gameOfLife.setWidth(firstWidth - 1);
+			
+			return new Life(newCells);
 		}
-		
-		if(currentX != firstWidth - 1){
-    		throw new IllegalArgumentException("Width differs from previous.");
-    	}
-				
-		gameOfLife.setHeight(currentY);
-		gameOfLife.setWidth(firstWidth - 1);
-		
-		return new Life(newCells);
+		else{
+			throw new IllegalArgumentException("Input string needs to be set or greater length then zero.");
+		}
 	}
 	
 	public String getPrintOut(int width, int height){
