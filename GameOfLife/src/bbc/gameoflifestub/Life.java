@@ -45,11 +45,11 @@ public class Life {
     }
     
     public boolean isCellAlive(int x, int y){
-    	return false;
+    	return isCellAlive(new Cell(x, y));
     }
     
     public boolean isCellAlive(Cell cell){
-    	return false;
+    	return liveCells.contains(cell);
     }
 
 	public static Life decodeInputLifeString(String inputString, GameOfLife gameOfLife) {
