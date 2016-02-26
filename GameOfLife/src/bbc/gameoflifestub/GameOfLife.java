@@ -80,6 +80,9 @@ public class GameOfLife {
 	}
 
 	public void setMaxGenerations(int maxGenerations) {
+		if (maxGenerations < 1){
+			throw new IllegalArgumentException("Number has to be non-negative");
+		}
 		this.maxGenerations = maxGenerations;
 	}
 }
