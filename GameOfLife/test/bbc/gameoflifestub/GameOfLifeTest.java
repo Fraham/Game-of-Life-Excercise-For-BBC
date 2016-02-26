@@ -118,6 +118,19 @@ public class GameOfLifeTest {
         assertEquals(life, testRunningGame.getCurrentLife());
 		// end of running test 1
         
-
+		// start of running test 2
+        testRunningGame = new GameOfLife(3);
+		testRunningGame.setInitailLife("...\n...\n...");
+		testRunningGame.setUpNextGeneration();
+		
+		setOfCells = new HashSet<Cell>();
+        life = new Life(setOfCells);
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+        
+        testRunningGame.setUpNextGeneration();
+        
+        assertEquals(life, testRunningGame.getCurrentLife());
+		// end of running test 2
 	}
 }
