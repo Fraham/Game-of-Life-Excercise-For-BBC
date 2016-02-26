@@ -29,6 +29,10 @@ public class Life {
     	// the cell an only be created if there is 3 neighbours
         return numNeighbours == 3 ? true : false;
     }
+    
+    public int getNumberOfNeighbours(int x, int y){
+    	return 0;
+    }
 
 	public static Life decodeInputLifeString(String inputString, GameOfLife gameOfLife) {
 		int currentX = 0;

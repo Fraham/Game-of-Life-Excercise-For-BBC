@@ -83,4 +83,13 @@ public class LifeTest {
     {
     	assertEquals("*.\n.*", life.getPrintOut(2, 2));
     }
+    
+    @Test
+    public void testGetNumberOfNeighbours()
+    {
+    	assertEquals(2, life.getNumberOfNeighbours(1, 2));
+    	assertEquals(2, life.getNumberOfNeighbours(2, 1));
+    	assertEquals(0, life.getNumberOfNeighbours(1, 1));
+    	assertEquals(0, life.getNumberOfNeighbours(2, 2));
+    }
 }
